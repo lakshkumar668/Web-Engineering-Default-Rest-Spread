@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Default Exapmle 1
+        function inc(number, increment  = 1){
+            return number + increment;
+        }
+        console.log(inc(2,2));
+        console.log(inc(2));
+
+        //Default Exapmle 2
+        function getDefaultIncremrent(){
+            return 1;
+        }
+        function inc(number, increment = getDefaultIncremrent()){
+            return number + increment;
+        } 
+        console.log(inc(2,2)); //4
+        console.log(inc(2)); //3
+
+        //Default Exapmle 3
+        function Sum(a, b = 2, c){
+            return a + b + c;
+        }
+        console.log(Sum(10,5,15)); //30
+        console.log(Sum(1, undefined, 3)) //6
+
+        //Rest Example 
+        function sumSpread(...numbers){
+            let result = 0;
+            numbers.forEach((number)=>{
+                result += number;
+            })
+            return result;
+        }
+        console.log(sumSpread(1)); //1
+        console.log(sumSpread(1,2,3,4,5)); //15
+
+        //Spread Example
+        function sum(a,b,c){
+            return a + b + c;
+        }
+        var args = [1,2,3];
+        console.log(sum(...args));
+
+    </script>
+    
+</body>
+</html>
